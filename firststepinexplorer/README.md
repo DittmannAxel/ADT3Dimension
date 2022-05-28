@@ -31,6 +31,6 @@ Now query:<br>
 And the result should be: <strong>the three rotorblades</strong>
 
 
-[-back-](https://github.com/DittmannAxel/ADT3Dimension)
+<a href="https://github.com/DittmannAxel/ADT3Dimension">-back-</a>
 
 

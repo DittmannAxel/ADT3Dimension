@@ -1,5 +1,9 @@
 # ADT3Dimension
-Azure Digital Twin and the 3rd dimension
+Azure Digital Twin and the 3rd dimension - step by step
+
+<p align="center">
+<img src ="images/windturbine.jpg">
+</p><br>
 
 This repo will define a simple example of a windturbine, consists in its base form of five parts (foundation, tower, generator, nacelle, rotorblade) based on [Azure Digital Twin Services](https://docs.microsoft.com/en-us/azure/digital-twins/). The ultimate goal is to have a 4K animation of the windturbine in 4K with real live data. <br>
 
@@ -9,4 +13,6 @@ https://docs.microsoft.com/de-de/azure/digital-twins/quickstart-azure-digital-tw
 For my example you can find some [files & explanation](files/) here.
 
 A detailled explanation and some screen about the results can be found [here](firststepinexplorer/README.md):
+
+**2nd Step**: Set the connection to an IOT Hub (and create one :-) ) and gather data from IOT Hub and send it to the ADT Instance. How-To can be found [here](connectiontoIOT/) 
 
