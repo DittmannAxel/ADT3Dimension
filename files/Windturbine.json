@@ -1,12 +1,13 @@
 {
     "@id": "dtmi:energyproducer:Windturbine;1",
     "@type": "Interface",
-    "displayName":"Wind Turbine",
+    "displayName":"WindTurbine",
+    "@context": "dtmi:dtdl:context;2",
     "contents": [
         {
             "@type" : "Property",
             "name" : "inProduction",
-            "schema" : "boolean"
+            "schema" : "double"
 
         },
         {
@@ -22,11 +23,10 @@
 
         },
         {
-            "@type": "Component",
-            "name": "Foundation",
-            "schema": "dtmi:com:energyproducer:Foundation;1"
+            "@type": "Relationship",
+            "name": "contains",
+            "displayName": "contains"
         }
-    ],
-    "@context": "dtmi:dtdl:context;2"
-
+    ]
+    
 }

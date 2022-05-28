@@ -1,12 +1,13 @@
 {
     "@id": "dtmi:energyproducer:Windenergytower;1",
     "@type": "Interface",
-    "displayName":"Tower",
+    "@context": "dtmi:dtdl:context;2",
+    "displayName":"Windenergytower",
     "contents":[
         {
             "@type" : "Property",
             "name" : "structuralOK",
-            "schema" : "boolean"
+            "schema" : "double"
 
         },
         {
@@ -16,10 +17,13 @@
 
         },
         {
-            "@type": "Component",
-            "name": "Generator",
-            "schema": "dtmi:com:energyproducer:Generator;1"
+            
+            "@type": "Relationship",
+            "name": "contains",
+            "displayName": "contains"
+
         }
 
     ]
+    
 }

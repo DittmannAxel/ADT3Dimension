@@ -1,5 +1,6 @@
 {
     "@id": "dtmi:energyproducer:Nacelle;1",
+    "@context": "dtmi:dtdl:context;2",
     "@type": "Interface",
     "displayName":"Nacelle",
     "contents":[
@@ -16,4 +17,5 @@
 
         }
     ]
+    
 }

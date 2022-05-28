@@ -1,6 +1,9 @@
-{
+
+
+   {
     "@id": "dtmi:energyproducer:Generator;1",
     "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
     "displayName":"Generator",
     "contents":[
         {
@@ -22,25 +25,24 @@
 
         },
         {
-            "@type": "Component",
-            "name": "Nacelle",
-            "schema": "dtmi:com:energyproducer:Nacelle;1"
+            "@type": "Relationship",
+            "name": "contains"
+
         },
         {
-            "@type": "Component",
-            "name": "Rotorblade1",
-            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+            "@type": "Relationship",
+            "name": "hasrotor1"
+
         },
         {
-            "@type": "Component",
-            "name": "Rotorblade2",
-            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+            "@type": "Relationship",
+            "name": "hasrotor2"
+
         },
         {
-            "@type": "Component",
-            "name": "Rotorblade3",
-            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+            "@type": "Relationship",
+            "name": "hasrotor3"
+
         }
     ]
-
 }
