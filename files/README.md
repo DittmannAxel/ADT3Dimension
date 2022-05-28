@@ -1,6 +1,6 @@
 # Files in this folder and some words ..
 
-This example contains a base windturbine. It contains the models of:
+This example uses a base windturbine. It contains the models of:
 - Windturbine
 - Foundation
 - Windenergytower
@@ -8,7 +8,7 @@ This example contains a base windturbine. It contains the models of:
 - Nacelle
 - Rotor
 
-Of course there are only some randome values defined as properties, just to provide an overview how to fill in some values. Also this does not reflect a "real" windturbine", it should only demonstrate the structural approach for training.
+Of course there are only some randome values defined as properties, just to provide an overview how to fill in some values. Also this does not reflect a "real" windturbine", it should only demonstrate the structural approach for this little exercise.
 
 [-back-](https://github.com/DittmannAxel/ADT3Dimension)
 
