@@ -8,5 +8,5 @@ I think for the beginning it is best to do the first steps with the ADT Explorer
 https://docs.microsoft.com/de-de/azure/digital-twins/quickstart-azure-digital-twins-explorer .
 For my example you can find some [files & explanation](files/) here.
 
-A detailled explanation and results can be found here:
+A detailled explanation and some screen about the results can be found [here](firststepinexplorer/README.md):
 
