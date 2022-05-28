@@ -1,0 +1,25 @@
+{
+    "@id": "dtmi:energyproducer:Foundation;1",
+    "@type": "Interface",
+    "displayName":"Foundation",
+    "contents":[
+        {
+            "@type" : "Property",
+            "name" : "structuralOK",
+            "schema" : "boolean"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "vibration",
+            "schema" : "double"
+
+        },
+        {
+            "@type": "Component",
+            "name": "Windenergytower",
+            "schema": "dtmi:com:energyproducer:Windenergytower;1"
+        }
+
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "@id": "dtmi:energyproducer:Windenergytower;1",
+    "@type": "Interface",
+    "displayName":"Tower",
+    "contents":[
+        {
+            "@type" : "Property",
+            "name" : "structuralOK",
+            "schema" : "boolean"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "vibration",
+            "schema" : "double"
+
+        },
+        {
+            "@type": "Component",
+            "name": "Generator",
+            "schema": "dtmi:com:energyproducer:Generator;1"
+        }
+
+    ]
+}

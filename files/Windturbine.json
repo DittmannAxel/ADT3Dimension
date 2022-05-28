@@ -1,0 +1,32 @@
+{
+    "@id": "dtmi:energyproducer:Windturbine;1",
+    "@type": "Interface",
+    "displayName":"Wind Turbine",
+    "contents": [
+        {
+            "@type" : "Property",
+            "name" : "inProduction",
+            "schema" : "boolean"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "height",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "location",
+            "schema" : "string"
+
+        },
+        {
+            "@type": "Component",
+            "name": "Foundation",
+            "schema": "dtmi:com:energyproducer:Foundation;1"
+        }
+    ],
+    "@context": "dtmi:dtdl:context;2"
+
+}

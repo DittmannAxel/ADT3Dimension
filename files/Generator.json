@@ -1,0 +1,46 @@
+{
+    "@id": "dtmi:energyproducer:Generator;1",
+    "@type": "Interface",
+    "displayName":"Generator",
+    "contents":[
+        {
+            "@type" : "Property",
+            "name" : "vibration",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "powerproduction",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "yawmotion",
+            "schema" : "double"
+
+        },
+        {
+            "@type": "Component",
+            "name": "Nacelle",
+            "schema": "dtmi:com:energyproducer:Nacelle;1"
+        },
+        {
+            "@type": "Component",
+            "name": "Rotorblade1",
+            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+        },
+        {
+            "@type": "Component",
+            "name": "Rotorblade2",
+            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+        },
+        {
+            "@type": "Component",
+            "name": "Rotorblade3",
+            "schema": "dtmi:com:energyproducer:Rotorblade;1"
+        }
+    ]
+
+}

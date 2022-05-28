@@ -1,0 +1,19 @@
+{
+    "@id": "dtmi:energyproducer:Rotorblade;1",
+    "@type": "Interface",
+    "displayName":"Rotorblade",
+    "contents":[
+        {
+            "@type" : "Property",
+            "name" : "structuralOK",
+            "schema" : "boolean"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "vibration",
+            "schema" : "double"
+
+        }
+    ]
+}

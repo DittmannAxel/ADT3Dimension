@@ -1,0 +1,19 @@
+{
+    "@id": "dtmi:energyproducer:Nacelle;1",
+    "@type": "Interface",
+    "displayName":"Nacelle",
+    "contents":[
+        {
+            "@type" : "Property",
+            "name" : "vibration",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Property",
+            "name" : "error",
+            "schema" : "double"
+
+        }
+    ]
+}
