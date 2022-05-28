@@ -10,6 +10,6 @@ This example contains a base windturbine. It contains the models of:
 
 Of course there are only some randome values defined as properties, just to provide an overview how to fill in some values. Also this does not reflect a "real" windturbine", it should only demonstrate the structural approach for training.
 
-[-back-](../)
+[-back-](./)
 
 
