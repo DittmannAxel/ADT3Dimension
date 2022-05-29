@@ -14,5 +14,5 @@ For my example you can find some [files & explanation](files/) here.
 
 A detailled explanation and some screen about the results can be found [here](firststepinexplorer/README.md):
 
-**2nd Step**: Set the connection to an IOT Hub (and create one :-) ) and gather data from IOT Hub and send it to the ADT Instance. How-To can be found [here](connectiontoIOT/) 
+**2nd Step**: Set the connection to an IOT Hub (and create one :-) ) and gather data from IOT Hub and send it to the ADT Instance. How-To can be found [here](connectiontoADT/) 
 
