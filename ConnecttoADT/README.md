@@ -24,5 +24,5 @@ https://docs.microsoft.com/en-us/azure/azure-functions/errors-diagnostics/sdk-ru
 But is is fixed in the lab:
 https://microsoftlearning.github.io/AZ-220-Microsoft-Azure-IoT-Developer/Instructions/Labs/LAB_AK_19-azure-digital-twins.html
 
-So I will provide here only the code changes for this windturbine example.
+
 
