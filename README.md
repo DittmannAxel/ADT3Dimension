@@ -14,7 +14,7 @@ For my example you can find some [files & explanation](files/) here.
 
 A detailled explanation and some screen about the results can be found [here](firststepinexplorer/README.md):
 
-**2nd Step**: Set the connection from external data sources via API call and let the ADT Instance consume live data [here](connectiontoADT/) 
+**2nd Step**: Set the connection from external data sources via API call and let the ADT Instance consume live data [here](connecttoADT/) 
 
 **3rd Step**: Start with the 3rd dimension in various ways: [Info here](3rdDimension/) <br>
 
