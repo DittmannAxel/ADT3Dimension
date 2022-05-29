@@ -4,18 +4,32 @@
     "@type": "Interface",
     "displayName":"Nacelle",
     "contents":[
+
         {
             "@type" : "Property",
+            "name" : "errorCode",
+            "schema" : "double"
+
+        },        
+        {
+            "@type" : "Property",
+            "name" : "position",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Telemetry",
             "name" : "vibration",
             "schema" : "double"
 
         },
         {
-            "@type" : "Property",
-            "name" : "error",
+            "@type" : "Telemetry",
+            "name" : "windspeed",
             "schema" : "double"
 
         }
+
     ]
     
 }

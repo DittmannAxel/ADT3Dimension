@@ -6,7 +6,7 @@
     "contents": [
         {
             "@type" : "Property",
-            "name" : "inProduction",
+            "name" : "ProductionIndex",
             "schema" : "double"
 
         },
@@ -20,6 +20,12 @@
             "@type" : "Property",
             "name" : "location",
             "schema" : "string"
+
+        },        
+        {
+            "@type" : "Property",
+            "name" : "StructuralIntegrity",
+            "schema" : "double"
 
         },
         {

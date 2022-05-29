@@ -6,12 +6,12 @@
     "contents":[
         {
             "@type" : "Property",
-            "name" : "structuralOK",
+            "name" : "structuralIntegrity",
             "schema" : "double"
 
         },
         {
-            "@type" : "Property",
+            "@type" : "Telemetry",
             "name" : "vibration",
             "schema" : "double"
 

@@ -27,8 +27,8 @@ And you can also see some intitial values from the *.xlsx file, if you klick on 
 <br>
 Now query:<br>
 <p>
-<strong>"SELECT * FROM digitaltwins T where T.vibration > 18"</strong></p> <br>
-And the result should be: <strong>the three rotorblades</strong>
+<strong>"SELECT * FROM digitaltwins T where T.powerproduction > 250"</strong></p> <br>
+And the result should be: <strong>the node Generator</strong>
 
 
 <a href="https://github.com/DittmannAxel/ADT3Dimension">-back-</a>

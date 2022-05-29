@@ -16,5 +16,10 @@ A detailled explanation and some screen about the results can be found [here](fi
 
 **2nd Step**: Set the connection from external data sources via API call and let the ADT Instance consume live data [here](connectiontoADT/) 
 
-**3rd Step**: Start with the 3rd dimension in various ways: [Info here](3rdDimension/)
+**3rd Step**: Start with the 3rd dimension in various ways: [Info here](3rdDimension/) <br>
+
+**Finally** a few useful ressources:<br>
+https://github.com/MicrosoftDocs/azure-docs/tree/main/articles/digital-twins
+
+
 

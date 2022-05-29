@@ -6,12 +6,7 @@
     "@context": "dtmi:dtdl:context;2",
     "displayName":"Generator",
     "contents":[
-        {
-            "@type" : "Property",
-            "name" : "vibration",
-            "schema" : "double"
 
-        },
         {
             "@type" : "Property",
             "name" : "powerproduction",
@@ -20,6 +15,18 @@
         },
         {
             "@type" : "Property",
+            "name" : "structuralIntegrity",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Telemetry",
+            "name" : "vibration",
+            "schema" : "double"
+
+        },
+        {
+            "@type" : "Telemetry",
             "name" : "yawmotion",
             "schema" : "double"
 
