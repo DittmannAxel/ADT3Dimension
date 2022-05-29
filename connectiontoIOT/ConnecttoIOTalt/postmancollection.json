@@ -1,0 +1,1069 @@
+{
+	"info": {
+		"_postman_id": "0461f5ad-5d9b-485c-ae01-7a0988959e2e",
+		"name": "Azure Digital Twins REST API Samples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Data Plane - Models",
+			"item": [
+				{
+					"name": "DigitalTwinModels Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n   {\r\n    \"@id\": \"dtmi:com:example:sensor;1\",\r\n    \"@type\": \"Interface\",\r\n    \"@context\": \"dtmi:dtdl:context;2\",\r\n    \"displayName\": \"example sensor interface\",    \r\n    \"contents\": [\r\n      {\r\n        \"@type\": \"Property\",\r\n        \"name\": \"name\",\r\n        \"displayName\": \"sensor name\",\r\n        \"schema\": \"string\"      \r\n      },\r\n      {\r\n        \"@type\": \"Property\",\r\n        \"name\": \"temp\",\r\n        \"displayName\": \"sensor temperature\",\r\n        \"schema\": \"integer\"       \r\n      },\r\n      {\r\n          \"@type\": \"Component\",\r\n          \"name\": \"tags\",\r\n          \"schema\": \"dtmi:com:example:tags;1\"\r\n      }        \r\n    ]   \r\n  },\r\n  {\r\n    \"@id\": \"dtmi:com:example:room;1\",\r\n    \"@type\": \"Interface\",\r\n    \"@context\": \"dtmi:dtdl:context;2\",\r\n    \"displayName\": \"example room interface\",    \r\n    \"contents\": [\r\n      {\r\n        \"@type\": \"Property\",\r\n        \"name\": \"name\",\r\n        \"displayName\": \"room name\",\r\n        \"schema\": \"string\",\r\n        \"writable\": true\r\n      },\r\n      {\r\n        \"@type\": \"Property\",\r\n        \"name\": \"temp\",\r\n        \"displayName\": \"room temperature\",\r\n        \"schema\": \"integer\"\r\n      },\r\n      {\r\n        \"@type\": \"Property\",\r\n        \"name\": \"comfortIndex\",\r\n        \"displayName\": \"room comfort index\",\r\n        \"schema\": \"integer\"\r\n      },\r\n      {\r\n      \"@type\": \"Relationship\",\r\n      \"@id\": \"dtmi:com:example:room:rel_has_sensors;1\",\r\n      \"name\": \"rel_has_sensors\",\r\n      \"displayName\": \"room has sensors\",\r\n      \"target\": \"dtmi:com:example:sensor;1\",\r\n      \"properties\": [\r\n         {\r\n           \"@type\": \"Property\",\r\n           \"name\": \"description\",\r\n           \"schema\": \"string\"\r\n         }\r\n       ]\r\n      }\r\n    ]   \r\n  },\r\n  {\r\n    \"@id\": \"dtmi:com:example:tags;1\",\r\n    \"@type\": \"Interface\",\r\n    \"@context\": \"dtmi:dtdl:context;2\",  \r\n    \"displayName\": \"example component\",  \r\n    \"contents\": [\r\n      {            \r\n        \"@type\": \"Property\",\r\n        \"name\": \"tags\",\r\n        \"displayName\": \"tags\",\r\n        \"schema\": \"string\"      \r\n      }\r\n    ]\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels Decommission",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/decommissioned\",\r\n    \"value\": true\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/dtmi:com:example:room;1?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"dtmi:com:example:room;1"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels Delete (sensor)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/dtmi:com:example:sensor;1?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"dtmi:com:example:sensor;1"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels Delete (room)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/dtmi:com:example:room;1?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"dtmi:com:example:room;1"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels Delete (component)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/dtmi:com:example:tempRules;1?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"dtmi:com:example:tempRules;1"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/{{model-id}}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"{{model-id}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels GetById includeModelDefinition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/{{model-id}}?includeModelDefinition=true&api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"{{model-id}}"
+							],
+							"query": [
+								{
+									"key": "includeModelDefinition",
+									"value": "true"
+								},
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels List includeModelDefinition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models?includeModelDefinition=true&api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models"
+							],
+							"query": [
+								{
+									"key": "includeModelDefinition",
+									"value": "true"
+								},
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwinModels Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/models/{id}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"models",
+								"{id}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Plane - Query",
+			"item": [
+				{
+					"name": "Query Twins",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"query\": \"SELECT * FROM DIGITALTWINS\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/query?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Plane - Twins",
+			"item": [
+				{
+					"name": "DigitalTwins Add (sensor)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"$metadata\": {\r\n    \"$model\": \"dtmi:com:example:sensor;1\"\r\n  },\r\n  \"name\" : \"example sensor 1\"\r\n\r\n}    "
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins Add (room)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"$metadata\": {\r\n    \"$model\": \"dtmi:com:example:room;1\"\r\n  },\r\n  \"name\" : \"example room 1\",\r\n  \"temp\" : 62,\r\n  \"comfortIndex\": 100\r\n}    "
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins AddRelationship",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"$targetId\": \"example-sensor\",\r\n  \"$relationshipName\": \"rel_has_sensors\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room/relationships/{{relationship-id}}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room",
+								"relationships",
+								"{{relationship-id}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins Delete (room)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins Delete (sensor)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins DeleteRelationship",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room/relationships/{{relationship-id}}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room",
+								"relationships",
+								"{{relationship-id}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins GetComponent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/{id}/components/{componentPath}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"{id}",
+								"components",
+								"{componentPath}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins GetRelationshipById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room/relationships/{{relationship-id}}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room",
+								"relationships",
+								"{{relationship-id}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins ListIncomingRelationships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor/incomingrelationships?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor",
+								"incomingrelationships"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins ListRelationships",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room/relationships?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room",
+								"relationships"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins SendComponentTelemetry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Message-Id",
+								"value": "f8a6d20e-f62a-4e7e-9251-df3ed8dc60bf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tags\": \"tag2, tag3\"\r\n}"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor/components/tags/telemetry?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor",
+								"components",
+								"tags",
+								"telemetry"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins SendTelemetry (sensor)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Message-Id",
+								"value": "e5ca50dd-ca31-4fae-8d84-3af5a72b10c5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"temp\": 71\r\n}"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor/telemetry?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor",
+								"telemetry"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins Update (room)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/comfortIndex\",\r\n    \"value\": 87\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins Replace Model Update (room)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/$metadata/$model\",\r\n    \"value\": \"dtmi:com:adt:dtsample:room;2\"\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins UpdateComponent",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n {\r\n  \"op\": \"add\",\r\n  \"path\": \"/tags\",\r\n  \"value\": \"tag4, tag5\"\r\n }\r\n]"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-sensor/components/tags?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-sensor",
+								"components",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins UpdateRelationship (room)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"add\",\r\n    \"path\": \"/description\",\r\n    \"value\": \"this is not my room\"\r\n  }  \r\n]"
+						},
+						"url": {
+							"raw": "https://{{digitaltwins-hostname}}/digitaltwins/example-room/relationships/{{relationship-id}}?api-version=2020-10-31",
+							"protocol": "https",
+							"host": [
+								"{{digitaltwins-hostname}}"
+							],
+							"path": [
+								"digitaltwins",
+								"example-room",
+								"relationships",
+								"{{relationship-id}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-10-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Control Plane - Check Name Availability",
+			"item": [
+				{
+					"name": "CheckNameAvailability",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"myadtinstance\",\r\n  \"type\": \"Microsoft.DigitalTwins/digitalTwinsInstances\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.DigitalTwins/locations/eastus2/checkNameAvailability?api-version=2020-12-01",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"providers",
+								"Microsoft.DigitalTwins",
+								"locations",
+								"eastus2",
+								"checkNameAvailability"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-12-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Control Plane - Digital Twins Instance",
+			"item": [
+				{
+					"name": "DigitalTwins Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroup}}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{{digitalTwinInstance}}?api-version=2020-12-01",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"resourceGroups",
+								"{{resourceGroup}}",
+								"providers",
+								"Microsoft.DigitalTwins",
+								"digitalTwinsInstances",
+								"{{digitalTwinInstance}}"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-12-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigitalTwins List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/providers/Microsoft.DigitalTwins/digitalTwinsInstances?api-version=2020-12-01",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								"{{subscriptionId}}",
+								"providers",
+								"Microsoft.DigitalTwins",
+								"digitalTwinsInstances"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "2020-12-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"addTokenTo": "header"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "digitaltwins-hostname",
+			"value": "<add value, for data plane>"
+		},
+		{
+			"key": "model-id",
+			"value": "dtmi:com:example:room;1"
+		},
+		{
+			"key": "twin-id",
+			"value": "example-room"
+		},
+		{
+			"key": "relationship-id",
+			"value": "54aed724-a0c6-430f-9b95-17f6ccb3493c"
+		},
+		{
+			"key": "subscriptionId",
+			"value": "<add value, for control plane>"
+		},
+		{
+			"key": "resourceGroup",
+			"value": "azure-iot-rg"
+		},
+		{
+			"key": "digitalTwinInstance",
+			"value": "<add digital twin instance name>"
+		}
+	]
+}

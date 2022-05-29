@@ -22,7 +22,7 @@ namespace SampleFunctionsApp
         private static string adtServiceUrl = Environment.GetEnvironmentVariable("ADT_SERVICE_URL");
 
         [FunctionName("ProcessHubToDTEvents")]
-        public async Task Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
+        public async void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
         {
             // After this is deployed, you need to turn the Managed Identity Status to "On",
             // Grab Object Id of the function and assigned "Azure Digital Twins Owner (Preview)" role
